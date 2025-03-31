@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="A heartfelt, beautifully designed proposal page crafted to ask a very special question.">
   <title>Will You Be My Girlfriend? | A Special Proposal</title>
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -14,7 +16,6 @@
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(to bottom, #fff5f7, #ffe4e6);
@@ -25,11 +26,9 @@
       -webkit-tap-highlight-color: transparent;
       overscroll-behavior: none;
     }
-
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Playfair Display', serif;
     }
-
     /* Main container */
     .main {
       min-height: 100vh;
@@ -41,14 +40,12 @@
       justify-content: center;
       padding: 1.5rem;
     }
-
     /* Background styles */
     .background {
       position: absolute;
       inset: 0;
       z-index: 0;
     }
-
     .overlay {
       position: absolute;
       inset: 0;
@@ -56,14 +53,12 @@
       mix-blend-mode: multiply;
       z-index: 10;
     }
-
     .dark-overlay {
       position: absolute;
       inset: 0;
       background-color: rgba(0, 0, 0, 0.4);
       z-index: 10;
     }
-
     .background video {
       position: absolute;
       inset: 0;
@@ -71,7 +66,6 @@
       height: 100%;
       object-fit: cover;
     }
-
     .background-image {
       position: absolute;
       inset: 0;
@@ -81,7 +75,6 @@
       background-position: center;
       display: none;
     }
-
     /* Floating hearts */
     .floating-hearts {
       position: absolute;
@@ -90,13 +83,11 @@
       opacity: 0.6;
       pointer-events: none;
     }
-
     .heart {
       position: absolute;
       color: #fecdd3;
       opacity: 0.7;
     }
-
     /* Content container */
     .content {
       position: relative;
@@ -105,7 +96,6 @@
       margin: 0 auto;
       text-align: center;
     }
-
     /* Proposal content */
     .proposal {
       opacity: 0;
@@ -117,7 +107,6 @@
       border-radius: 1.5rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
-
     .heart-icon {
       width: 6rem;
       height: 6rem;
@@ -125,7 +114,6 @@
       color: #f43f5e;
       animation: pulse 2s infinite;
     }
-
     .title {
       font-size: 2.5rem;
       font-weight: 700;
@@ -133,7 +121,6 @@
       margin-bottom: 1.5rem;
       line-height: 1.2;
     }
-
     .description {
       font-size: 1.25rem;
       color: #4b5563;
@@ -143,16 +130,16 @@
       margin-left: auto;
       margin-right: auto;
     }
-
-    /* Button container */
+    /* Button container using flex for proper arrangement */
     .button-container {
-      position: relative;
-      height: 12rem;
       display: flex;
-      align-items: center;
+      gap: 1.5rem;
       justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      position: relative;
+      height: auto;
     }
-
     /* Buttons */
     .btn {
       display: inline-flex;
@@ -166,35 +153,29 @@
       border: none;
       outline: none;
       font-family: 'Montserrat', sans-serif;
+      padding: 0.75rem 1.5rem;
     }
-
     .btn:active {
       transform: scale(0.95);
     }
-
     .btn-yes {
       background-color: #f43f5e;
       color: white;
       box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.3);
     }
-
     .btn-yes:hover {
       background-color: #e11d48;
     }
-
+    /* Initially, the no button is arranged in line */
     .btn-no {
       background-color: #f3f4f6;
       color: #1f2937;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      top: 0;
-      left: 0;
+      transition: all 0.2s;
     }
-
     .btn-no:hover {
       background-color: #e5e7eb;
     }
-
     .hint {
       margin-top: 2rem;
       color: #e11d48;
@@ -204,7 +185,6 @@
       transition: opacity 0.3s;
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     }
-
     /* Response content */
     .response {
       background-color: rgba(255, 255, 255, 0.9);
@@ -216,27 +196,23 @@
       transform: scale(0.8);
       animation: fadeInScale 0.5s forwards;
     }
-
     .response-title {
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 2rem;
       color: #f43f5e;
     }
-
     .response-description {
       font-size: 1.25rem;
       color: #4b5563;
       margin-bottom: 2.5rem;
       line-height: 1.6;
     }
-
     .response-highlight {
       font-size: 1.5rem;
       font-weight: 500;
       color: #f43f5e;
     }
-
     .response-heart {
       width: 8rem;
       height: 8rem;
@@ -244,7 +220,6 @@
       color: #f43f5e;
       fill: #f43f5e;
     }
-
     /* Footer */
     .footer {
       position: absolute;
@@ -256,7 +231,6 @@
       z-index: 20;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
-
     /* Confetti canvas */
     #confetti-canvas {
       position: fixed;
@@ -267,7 +241,6 @@
       z-index: 100;
       pointer-events: none;
     }
-
     /* Message button */
     .message-btn {
       background-color: #0084ff;
@@ -283,107 +256,46 @@
       box-shadow: 0 10px 15px -3px rgba(0, 132, 255, 0.3);
       transition: all 0.2s;
     }
-
     .message-btn:hover {
       background-color: #0070d8;
       transform: translateY(-2px);
     }
-
     .message-btn:active {
       transform: translateY(0);
     }
-
     /* Animations */
     @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
-
     @keyframes bounce {
-      from {
-        transform: translateY(0);
-      }
-      to {
-        transform: translateY(-10px);
-      }
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
     }
-
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeInScale {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      to { opacity: 1; transform: scale(1); }
     }
-
     @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
-
     /* Responsive styles */
     @media (max-width: 768px) {
-      .title {
-        font-size: 2rem;
-      }
-
-      .description {
-        font-size: 1rem;
-      }
-
-      .heart-icon {
-        width: 5rem;
-        height: 5rem;
-      }
-
-      .response-title {
-        font-size: 2rem;
-      }
-
-      .response-description {
-        font-size: 1rem;
-      }
-
-      .response-highlight {
-        font-size: 1.25rem;
-      }
-
-      .response-heart {
-        width: 6rem;
-        height: 6rem;
-      }
-
-      .background video {
-        display: none;
-      }
-
-      .background-image {
-        display: block;
-      }
-
-      .proposal {
-        padding: 1.5rem;
-      }
-
-      .response {
-        padding: 1.5rem;
-      }
+      .title { font-size: 2rem; }
+      .description { font-size: 1rem; }
+      .heart-icon { width: 5rem; height: 5rem; }
+      .response-title { font-size: 2rem; }
+      .response-description { font-size: 1rem; }
+      .response-highlight { font-size: 1.25rem; }
+      .response-heart { width: 6rem; height: 6rem; }
+      .background video { display: none; }
+      .background-image { display: block; }
+      .proposal, .response { padding: 1.5rem; }
+      .button-container { flex-direction: column; }
     }
-
     /* Icon styles */
     .icon {
       display: inline-block;
@@ -393,14 +305,8 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-
-    .icon-heart {
-      fill: currentColor;
-    }
-
-    .icon-messenger {
-      fill: currentColor;
-    }
+    .icon-heart { fill: currentColor; }
+    .icon-messenger { fill: currentColor; }
   </style>
 </head>
 <body>
@@ -414,62 +320,49 @@
       </video>
       <div class="background-image" style="background-image: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');"></div>
     </div>
-
     <!-- Floating hearts -->
     <div class="floating-hearts" id="floating-hearts"></div>
-
     <!-- Main content -->
     <div class="content" id="content">
       <!-- Content will be dynamically inserted here -->
     </div>
-
     <!-- Footer -->
     <footer class="footer">
       <p>Made with ❤️ just for you | <span id="current-year"></span></p>
     </footer>
   </main>
-
   <!-- Confetti canvas -->
   <canvas id="confetti-canvas" style="display: none;"></canvas>
-
   <script>
     // Global proposal state and variables
     let proposalState = "pending";
     let noCount = 0;
-    let noButtonPosition = { top: 0, left: 0 };
     let confettiActive = false;
-
     // DOM Elements
     const content = document.getElementById('content');
     const floatingHeartsContainer = document.getElementById('floating-hearts');
     const confettiCanvas = document.getElementById('confetti-canvas');
     const currentYearSpan = document.getElementById('current-year');
-
     // Set current year
     currentYearSpan.textContent = new Date().getFullYear();
-
     // Check if device is mobile
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
     // Initialize the page
     function init() {
       createFloatingHearts();
       renderContent();
       setupBackgroundMusic();
     }
-
-    // Setup background music
+    // Setup background music from local file "bulong.mp3"
     function setupBackgroundMusic() {
-      const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+      const audio = new Audio('bulong.mp3');
       audio.volume = 0.4;
       audio.loop = true;
-
       document.addEventListener('click', function playMusic() {
         audio.play().catch(e => console.log("Audio play prevented:", e));
         document.removeEventListener('click', playMusic);
       }, { once: true });
     }
-
     // Create floating hearts
     function createFloatingHearts() {
       const count = isMobile ? 8 : 15;
@@ -489,7 +382,6 @@
         floatingHeartsContainer.appendChild(heart);
       }
     }
-
     // Render content based on proposalState
     function renderContent() {
       content.innerHTML = '';
@@ -505,12 +397,10 @@
         renderNoResponse();
       }
     }
-
     // Render proposal content
     function renderProposal() {
       const proposal = document.createElement('div');
       proposal.className = 'proposal';
-
       proposal.innerHTML = `
         <svg class="heart-icon icon icon-heart" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -522,13 +412,13 @@
           You've brought so much joy and meaning into my life.
         </p>
         <div class="button-container">
-          <button id="yes-button" class="btn btn-yes" style="height: ${getYesButtonSize()}px; width: ${getYesButtonSize() * 3}px; font-size: ${16 + noCount}px;">
+          <button id="yes-button" class="btn btn-yes" aria-label="Yes, I will be your girlfriend">
             <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
             Yes
           </button>
-          <button id="no-button" class="btn btn-no" style="height: ${getNoButtonSize()}px; width: ${getNoButtonSize() * 3}px; font-size: ${Math.max(16 - noCount, 8)}px; top: ${noButtonPosition.top}%; left: ${noButtonPosition.left}%;">
+          <button id="no-button" class="btn btn-no" aria-label="No, I cannot">
             <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -540,30 +430,25 @@
           The "No" button seems to be running away... 😉
         </p>
       `;
-
       content.appendChild(proposal);
       document.getElementById('yes-button').addEventListener('click', handleYesClick);
-
       const noButton = document.getElementById('no-button');
-      noButton.addEventListener('click', handleNoClick);
-
+      // On hover or touch, change the layout to absolute positioning so the button can run
       if (isMobile) {
         noButton.addEventListener('touchstart', handleNoTouch);
       } else {
         noButton.addEventListener('mouseenter', handleNoHover);
       }
+      noButton.addEventListener('click', handleNoClick);
     }
-
     // Render yes response
     function renderYesResponse() {
       const resp = document.createElement('div');
       resp.className = 'response';
-
       resp.innerHTML = `
         <h2 class="response-title">She said YES! 💖</h2>
         <p class="response-description">
-          Thank you for making me the happiest person alive! This is the beginning of our beautiful
-          journey together.
+          Thank you for making me the happiest person alive! This is the beginning of our beautiful journey together.
           <br><br>
           <span class="response-highlight">
             I promise to cherish every moment with you.
@@ -581,21 +466,18 @@
           Message Me on Facebook
         </a>
       `;
-
       content.appendChild(resp);
       const heart = resp.querySelector('.response-heart');
       animateHeart(heart);
-      // Open Messenger with the prefilled message after a short delay
+      // Open Messenger after a short delay
       setTimeout(() => {
         window.open('https://m.me/lance.cochangco?ref=I%20said%20YES%20to%20your%20proposal!', '_blank');
       }, 3000);
     }
-
     // Render no response
     function renderNoResponse() {
       const resp = document.createElement('div');
       resp.className = 'response';
-
       resp.innerHTML = `
         <h2 class="response-title" style="color: #4b5563;">I understand</h2>
         <p class="response-description">
@@ -603,85 +485,57 @@
           <br><br>
           Our journey together has still been meaningful to me.
         </p>
-        <button id="try-again" class="btn" style="background-color: #6b7280; color: white; padding: 1.5rem 2rem; font-size: 1.125rem;">
+        <button id="try-again" class="btn" style="background-color: #6b7280; color: white;">
           Try Again
         </button>
       `;
-
       content.appendChild(resp);
       document.getElementById('try-again').addEventListener('click', () => {
         proposalState = "pending";
         renderContent();
       });
     }
-
     // Button event handlers
     function handleYesClick() {
       proposalState = "yes";
       renderContent();
     }
-
     function handleNoHover() {
-      if (proposalState === "pending") {
-        moveNoButton();
-      }
+      // Change button to absolute positioning when first hovered
+      const noButton = document.getElementById('no-button');
+      noButton.style.position = "absolute";
+      moveNoButton();
     }
-
     function handleNoTouch(e) {
-      if (proposalState === "pending") {
-        moveNoButton();
-        e.preventDefault();
-        return false;
-      }
+      const noButton = document.getElementById('no-button');
+      noButton.style.position = "absolute";
+      moveNoButton();
+      e.preventDefault();
+      return false;
     }
-
     function handleNoClick() {
       proposalState = "no";
       renderContent();
     }
-
-    // Move the no button to a random position and update sizes
+    // Move the no button randomly and update sizes
     function moveNoButton() {
       noCount++;
-      noButtonPosition = {
-        top: Math.floor(Math.random() * 70),
-        left: Math.floor(Math.random() * 70)
-      };
-
       const noButton = document.getElementById('no-button');
-      if (noButton) {
-        noButton.style.top = `${noButtonPosition.top}%`;
-        noButton.style.left = `${noButtonPosition.left}%`;
-        noButton.style.height = `${getNoButtonSize()}px`;
-        noButton.style.width = `${getNoButtonSize() * 3}px`;
-        noButton.style.fontSize = `${Math.max(16 - noCount, 8)}px`;
-
-        const yesButton = document.getElementById('yes-button');
-        if (yesButton) {
-          yesButton.style.height = `${getYesButtonSize()}px`;
-          yesButton.style.width = `${getYesButtonSize() * 3}px`;
-          yesButton.style.fontSize = `${16 + noCount}px`;
-        }
-
-        const hint = document.getElementById('hint');
-        if (hint && noCount > 3) {
-          hint.style.opacity = '1';
-        }
+      const topPos = Math.floor(Math.random() * 70);
+      const leftPos = Math.floor(Math.random() * 70);
+      noButton.style.top = `${topPos}%`;
+      noButton.style.left = `${leftPos}%`;
+      // Optionally adjust font sizes based on count
+      noButton.style.fontSize = `${Math.max(16 - noCount, 8)}px`;
+      const yesButton = document.getElementById('yes-button');
+      if (yesButton) {
+        yesButton.style.fontSize = `${16 + noCount}px`;
+      }
+      const hint = document.getElementById('hint');
+      if (hint && noCount > 3) {
+        hint.style.opacity = '1';
       }
     }
-
-    function getNoButtonSize() {
-      const baseSize = isMobile ? 36 : 40;
-      const reduction = Math.min(noCount * 5, 25);
-      return baseSize - reduction;
-    }
-
-    function getYesButtonSize() {
-      const baseSize = isMobile ? 36 : 40;
-      const increase = Math.min(noCount * 8, 50);
-      return baseSize + increase;
-    }
-
     // Animate heart in the yes response
     function animateHeart(heart) {
       let scale = 1;
@@ -697,24 +551,17 @@
       }
       animate();
     }
-
     // Confetti functions
     function startConfetti() {
       confettiCanvas.style.display = 'block';
       const ctx = confettiCanvas.getContext('2d');
       confettiCanvas.width = window.innerWidth;
       confettiCanvas.height = window.innerHeight;
-
       const particles = [];
       const particleCount = isMobile ? 100 : 200;
       const gravity = 0.3;
-      const colors = [
-        '#f43f5e', '#fb7185', '#fda4af', '#fecdd3', 
-        '#fee2e2', '#fcd34d', '#fbbf24', '#ec4899', '#be185d'
-      ];
+      const colors = ['#f43f5e', '#fb7185', '#fda4af', '#fecdd3', '#fee2e2', '#fcd34d', '#fbbf24', '#ec4899', '#be185d'];
       const shapes = ['circle', 'heart'];
-
-      // Create particles
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * confettiCanvas.width,
@@ -722,16 +569,11 @@
           radius: Math.random() * 4 + 2,
           color: colors[Math.floor(Math.random() * colors.length)],
           shape: shapes[Math.floor(Math.random() * shapes.length)],
-          velocity: {
-            x: Math.random() * 6 - 3,
-            y: Math.random() * 2 + 2
-          },
+          velocity: { x: Math.random() * 6 - 3, y: Math.random() * 2 + 2 },
           rotation: Math.random() * 360,
           rotationSpeed: Math.random() * 2 - 1
         });
       }
-
-      // Animation loop
       function animate() {
         if (!confettiActive) return;
         ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
@@ -746,22 +588,12 @@
           } else if (p.shape === 'heart') {
             const size = p.radius * 2;
             ctx.moveTo(0, 0);
-            ctx.bezierCurveTo(
-              size / 2, -size / 2,
-              size, 0,
-              0, size
-            );
-            ctx.bezierCurveTo(
-              -size, 0,
-              -size / 2, -size / 2,
-              0, 0
-            );
+            ctx.bezierCurveTo(size/2, -size/2, size, 0, 0, size);
+            ctx.bezierCurveTo(-size, 0, -size/2, -size/2, 0, 0);
           }
           ctx.fillStyle = p.color;
           ctx.fill();
           ctx.restore();
-
-          // Update particle
           p.x += p.velocity.x;
           p.y += p.velocity.y;
           p.velocity.y += gravity;
@@ -773,10 +605,7 @@
               radius: p.radius,
               color: p.color,
               shape: p.shape,
-              velocity: {
-                x: Math.random() * 6 - 3,
-                y: Math.random() * 2 + 2
-              },
+              velocity: { x: Math.random() * 6 - 3, y: Math.random() * 2 + 2 },
               rotation: Math.random() * 360,
               rotationSpeed: Math.random() * 2 - 1
             };
@@ -784,23 +613,18 @@
         }
         requestAnimationFrame(animate);
       }
-
       animate();
-
-      // Reduce particles after a few seconds
       setTimeout(() => {
         const newCount = isMobile ? 50 : 100;
         particles.splice(0, particles.length - newCount);
       }, 3000);
     }
-
     window.addEventListener('resize', () => {
       if (confettiCanvas) {
         confettiCanvas.width = window.innerWidth;
         confettiCanvas.height = window.innerHeight;
       }
     });
-
     document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
